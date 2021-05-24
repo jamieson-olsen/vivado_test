@@ -28,9 +28,18 @@ read_vhdl ./top_level.vhd
 
 read_xdc -verbose ./constraints.xdc
 
+# get the git SHA hash (commit id) and pass it to the top level source
+# keep it simple just use the short form of the long SHA-1 number.
+# Note this is a 7 character HEX string, e.g. 28 bits, but Vivado requires 
+# this number to be in Verilog notation, even if the top level source is VHDL.
+
+set git_sha [exec git rev-parse --short=7 HEAD]
+set v_git_sha "28'h$git_sha"
+puts "INFO: passing git commit number $v_git_sha to top level generic"
+
 # synth design...
 
-synth_design -top top_level
+synth_design -top top_level -generic version=$v_git_sha
 report_timing_summary -file $outputDir/post_synth_timing_summary.rpt
 report_power -file $outputDir/post_synth_power.rpt
 report_utilization -file $outputDir/post_synth_util.rpt
@@ -70,4 +79,8 @@ write_bitstream -force $outputDir/vivado_test.bit
 
 # write out ILA debug probes file
 # write_debug_probes -force $outputDir/probes.ltx
+
+exit
+
+
 

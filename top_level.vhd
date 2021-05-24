@@ -10,6 +10,7 @@ library unisim;
 use unisim.vcomponents.all;
 
 entity top_level is
+generic(version: std_logic_vector(27 downto 0) := X"1234567"); -- git commit number is passed in from tcl
 port(
     reset: in  std_logic; -- active high reset
     sysclk_p, sysclk_n: in  std_logic; -- system clock 200MHz LVDS
