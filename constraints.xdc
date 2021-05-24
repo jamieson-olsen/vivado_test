@@ -24,7 +24,7 @@ set_property IOSTANDARD LVCMOS15 [get_ports {reset}]
 
 # din 7..4 is from N S E W pushbuttons, VCCO bank 1.5V
 
-set_property PACKAGE_PIN A112 [get_ports {din[7]}]
+set_property PACKAGE_PIN AA12 [get_ports {din[7]}]
 set_property PACKAGE_PIN AB12 [get_ports {din[6]}]
 set_property PACKAGE_PIN AG5 [get_ports {din[5]}]
 set_property PACKAGE_PIN AC6 [get_ports {din[4]}]

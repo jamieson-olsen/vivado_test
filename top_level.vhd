@@ -62,7 +62,7 @@ begin
                 end if;
             end if;
         end if;
-    end process oneshot_proc;
+    end process test_proc;
 
 	-- combinatorial assignments...
    

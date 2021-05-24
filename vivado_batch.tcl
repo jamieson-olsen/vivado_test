@@ -12,7 +12,7 @@ set_part xc7k325t-ffg900-2
 
 # load the sources...
 
-read_vhdl ../src/top_level.vhd
+read_vhdl ./top_level.vhd
 
 # Load IP core container file should be *.XCIX container
 # which includes the output products.  XCIX does not
