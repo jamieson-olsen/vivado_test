@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This is a simple vivado test project to be built from the command line in batch mode. It does not use the Vivado GUI, nor does it include any IP blocks. This design targets the Kintex 7 FPGA on the KC705 development board. Also note that the top_level.vhd file instantates two Xilinx primitives (BUFDS and BUFG) which makes this example code unsuitable for porting to another FPGA vendor.
+This is a simple Vivado example to be built from the command line in "Non-Project" mode. It does not use the Vivado GUI, nor does it include any IP blocks. This design targets the Kintex 7 FPGA on the KC705 development board. There are a few Xilinx-specific primitives (BUFDS and BUFG) instantiated in the top_level.vhd but other than that the code is mostly vanilla VHDL. At some point I'll work on adding a simple IP block to show how that is pulled in.
 
 ## Git Integration and Version Numbering
 
